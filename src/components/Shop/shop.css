@@ -1,0 +1,158 @@
+.shop {
+    max-width: 100%;
+    height: auto;
+}
+
+.shop-image-container {
+    max-width: 100%;
+    height: 200px;
+}
+
+.shop-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.horizontal-line {
+    border: 1px solid black;
+    
+}
+
+.menu-container {
+    max-width: 100%;
+    /* padding: 10px; */
+    margin-top: 10px;
+}
+
+.menu-container ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.menu-container ul li {
+    padding: 10px;
+}
+
+.menu-container ul li:hover {
+    background-color: #1266f1;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.products-container {
+    max-width: 100%;
+    padding: 10px;
+
+}
+
+.products-container .product-container {
+    max-width: 100%;
+    height: 500px;
+    border: 1px solid #ddd;
+    padding: 10px;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  /* box-shadow: 0 1.5em 2em -1em #999; */
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.product-image-container {
+    max-width: 100%;
+    height: 70%;
+    padding: 20px;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-name {
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.product-price {
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.buy-button {
+    color: black;
+    font-weight: bold;
+    margin: auto 0;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fff;
+    outline: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.buy-button:hover {
+    background-color: black;
+    color: #fff;
+}
+
+.pagination ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    padding: 10px;
+}
+.pagination ul li {
+    padding: 10px 20px;
+    border: 1px solid #1266f1;
+    color: #1266f1;
+    border-radius: 5px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination ul li:hover {
+    cursor: pointer;
+    background-color: #1266f1;
+    color: #fff;
+}
+
+.pagination ul li:active {
+    cursor: pointer;
+    background-color: #1266f1;
+    color: #fff;
+}
+
+@media screen and (min-width: 780px) {
+
+    .shop-image-container {
+        height: 500px;
+    }
+
+
+    .shop-image {
+        object-fit: fill;
+    }
+
+    .products-container {
+        display: flex;
+        justify-content: space-between;
+        row-gap: 10px;
+    }
+
+
+}

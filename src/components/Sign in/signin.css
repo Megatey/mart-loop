@@ -1,0 +1,146 @@
+.signin {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.signin-header {
+    width: 100%;
+    height: 170px;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    animation: gradient 5s ease infinite;
+    background-size: 400% 400%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.signin-header h3 {
+    font-weight: 500;
+    font-size: 1.75rem;
+    color: #4f4f4f;
+}
+
+.main {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.main .signin-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.main .signin-form .input-container {
+    color: #4f4f4f;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.main .signin-form .input-container input {
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    outline: 0;
+    min-width: 100% !important;
+    padding: 10px;
+    font-size: 1rem;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+
+.main .signin-form .input-container input:focus {
+    border-color: #4285f4;
+    box-shadow: inset 0 0 0 1px #4285f4;
+}
+
+.main .signin-form  .forget-password {
+    cursor: pointer;
+    text-decoration: none;
+    color: #4285f4;
+    display: flex;
+    justify-content: flex-end;
+    width: fit-content;
+    position: relative;
+    margin-left: 65%;
+    box-sizing: border-box;
+}
+
+.main .signin-form  .forget-password:hover {
+    border-bottom: 1px solid #4285f4;
+}
+
+.main .signin-form  button {
+    text-transform: uppercase;
+    word-wrap: break-word;
+    white-space: normal;
+    color: #fff;
+    background-color: #1266f1 !important;
+    font-size: 14px;
+    padding: 15px 20px;
+    line-height: 1;
+    margin: 0 auto;
+    font-weight: 500;
+    border-radius: 0.25rem;
+    outline: none;
+    width: fit-content;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    top: 20px;
+}
+
+.main .signin-form  button:hover {
+    background-color: lightblue !important;
+    color: #1266f1 !important;
+}
+
+.main .register {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.main .register span {
+    cursor: pointer;
+    color: #4285f4;
+}
+
+.main .register span:hover {
+    border-bottom: 1px solid #4285f4;
+} 
+
+@media screen and (min-width: 780px) {
+    .main {
+        width: 33.33%;
+        position: relative;
+        left: 33.33%;
+    }
+
+    .main .signin-form  .forget-password {
+        /* margin-left: 0%; */
+        /* justify-content: flex-start; */
+        /* /* display: block; */
+        box-sizing: border-box;
+    }
+
+
+}
