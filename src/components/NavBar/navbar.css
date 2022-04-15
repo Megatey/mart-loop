@@ -68,6 +68,7 @@
     border-bottom: 2px solid #1266f1;
 }
 
+
 @media screen and (min-width: 780px) {
     .header .navigation .site-name h3 {
         font-size: 1.5rem;
@@ -79,10 +80,12 @@
 
     .nav-header {
         display: flex;
+        width: 100%;
         justify-content: space-between;
         align-items: center;
-        padding: 0 20px;
+        /* padding: 0 20px; */
         box-sizing: border-box;
+        height: 80px;
     }
 
     .menu-list-desktop {
@@ -90,27 +93,27 @@
     }
 
     .menu-list-desktop ul {
+        width: 100%;
         display: flex;
         list-style: none;
+        margin: 0;
+        padding: 0;
+        justify-content: space-between;
     }
 
     .menu-list-desktop ul li {
-        padding: 0 10px;
+        padding: 0 5px;
         cursor: pointer;
+        border: 2px solid #161616;
+        border-radius: 5px;
+        margin: 0 10px;
+        color: #161616;
     }
 
-    .menu-list-desktop ul li p {
-        box-sizing: border-box;
-    }
-
-    .menu-list-desktop ul li p:hover  {
-        font-size: 1rem;
-        color: #1266f1;
-    }
-
-    .menu-list-desktop ul li p:active {
-        color: #1266f1;
-    }
+    .menu-list-desktop ul li:hover {
+        background-color: #161616;
+        color: #fff;
+    } 
 
 
 

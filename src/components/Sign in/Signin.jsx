@@ -26,7 +26,7 @@ const Signin = () => {
     if (user.username && user.password) {
       try {
         console.log("starting api calls")
-        const request = await fetch('https://shopping-ecommerce-app.herokuapp.com/api/auth/login', {
+        const request = await fetch(`${process.env.REACT_APP_BASEURL}/auth/login`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -71,6 +71,7 @@ const Signin = () => {
       console.log("ready to go")
       navigate('/shop')
       console.log("now gone")
+      console.log(process.env);
       // alert('Go to shop')
       // return
     }

@@ -18,7 +18,7 @@ const Shop = () => {
     console.log('starting.....');
     try {
         console.log('fetching datas');
-      const getData = await fetch('https://shopping-ecommerce-app.herokuapp.com/api/products', {
+      const getData = await fetch(`${process.env.REACT_APP_BASEURL}/products`, {
         headers: {
           'Authorization': 'Bearer ' + localStorage.getItem('token')
           
@@ -105,11 +105,6 @@ const genderBasedItems = (gender) => {
   ))
   setItems(newarrDisplay)
 }
-
-
-
-
-
   return (
     <div className='shop'>
       <div className="shop-image-container">

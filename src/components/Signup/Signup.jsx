@@ -20,7 +20,7 @@ const Signup = () => {
     setAlert('')
     if (user.username && user.email && user.password) {
       try {
-        const request = await fetch('https://shopping-ecommerce-app.herokuapp.com/api/auth/register', {
+        const request = await fetch(`${process.env.REACT_APP_BASEURL}/auth/register`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -50,6 +50,7 @@ const Signup = () => {
       setBtnEnabler(false)
     }
   }
+
   return (
     <div className='signup'>
       <div className="signup-header">

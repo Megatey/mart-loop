@@ -1,6 +1,6 @@
 import './navbar.css'
 import React, {useState} from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 // import { useSelector } from 'react-redux'
 
 const NavBar = () => {
@@ -26,29 +26,31 @@ const NavBar = () => {
             </div>
             {toggle && <div className="menu-list">
                 <ul>
-                {localStorage.getItem('token') ? <> <li><p>Dashboard</p></li>
-                    <li><p>Shop</p></li>
-                    <li><p>Cart</p></li>
-                    <li><p>Orders</p></li>
+                {localStorage.getItem('token') ? <> 
+                {/* <li><p>Dashboard</p></li> */}
+                    <Link to='/shop' style={{textDecoration:'none'}}><li><p>Shop</p></li></Link>
+                    <Link to='/cart' style={{textDecoration:'none'}}><li><p>Cart</p></li></Link>
+                    <Link to='/order' style={{textDecoration:'none'}}><li><p>Orders</p></li></Link>
                     <li><p onClick={signOut}>Sign out</p></li>
                     </> :
                     <>
-                    <li><p>Sign in</p></li>
-                    <li><p>Sign up</p></li>
+                    <Link to='/' style={{textDecoration:'none'}}><li><p>Sign in</p></li></Link>
+                    <Link to='/signup' style={{textDecoration:'none'}}><li><p>Sign up</p></li></Link>
                     </>}
                 </ul>
             </div>}
             <div className="menu-list-desktop">
                 <ul>
-                {localStorage.getItem('token') ? <> <li><p>Dashboard</p></li>
-                    <li><p>Shop</p></li>
-                    <li><p>Cart</p></li>
-                    <li><p>Orders</p></li>
+                {localStorage.getItem('token') ? <> 
+                {/* <li><p>Dashboard</p></li> */}
+                <Link to='/shop' style={{textDecoration:'none'}}><li><p>Shop</p></li></Link>
+                <Link to='/cart' style={{textDecoration:'none'}}><li><p>Cart</p></li></Link>
+                <Link to='/order' style={{textDecoration:'none'}}><li><p>Orders</p></li></Link>
                     <li><p onClick={signOut}>Sign out</p></li>
                     </> :
                     <>
-                    <li><p>Sign in</p></li>
-                    <li><p>Sign up</p></li>
+                    <Link to='/' style={{textDecoration:'none'}}><li><p>Sign in</p></li></Link>
+                    <Link to='/signup' style={{textDecoration:'none'}}><li><p>Sign up</p></li></Link>
                     </>}
                 </ul>
             </div>
