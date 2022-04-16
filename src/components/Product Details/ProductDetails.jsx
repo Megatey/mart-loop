@@ -149,24 +149,26 @@ const ProductDetails = () => {
                     <div className="price-available-container">
                         <p className="item-price">$ {price}</p>
                         <button disabled={true} style={inStock ? {
-                            backgroundColor: 'green',
+                            backgroundColor: '#00FF00',
                             padding: '10px',
                             color: 'white',
-                            fontSize: '16px'
+                            fontSize: '16px',
+                            border: 'none'
                         } : {
                             backgroundColor: 'red',
                             padding: '10px',
                             color: 'white',
-                            fontSize: '16px'
+                            fontSize: '16px',
+                            border: 'none'
                         }}>{inStock ? 'In Stock' : 'Out of Stock'}</button>
                     </div>
                     <p className="product-desc">{desc}</p>
                     <div className="quantity-container">
                         <button className="decrease-button" onClick={() => setAmount(amount - 1)}>-</button>
-                        <input type="number" value={amount} onChange={e => setAmount(e.target.value)} disabled={true} />
+                        <input type="number" value={amount} onChange={e => setAmount(e.target.value)} disabled={true} className='qty-amount' />
                         <button className="increase-button" onClick={() => setAmount(amount + 1)}>+</button>
                     </div>
-                    <textarea name="address" value={supplyAddress} onChange={e => setSupplyAddress(e.target.value)} className="address-box" placeholder='Input Address...' cols="20" rows="10"></textarea>
+                    <input type='text' name="address" value={supplyAddress} onChange={e => setSupplyAddress(e.target.value)} className="address-box" placeholder='Input Address...'/>
                     <div className="optional-buttons">
                         {!addCart && <button className="add-to-cart" onClick={addToCart}>Add To Cart</button>}
                         {!orderProduct && <button className="order-product" onClick={orderingProduct}>Order</button>}
