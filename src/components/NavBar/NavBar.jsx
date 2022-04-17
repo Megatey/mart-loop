@@ -29,8 +29,8 @@ const NavBar = () => {
                 {localStorage.getItem('token') ? <> 
                 {/* <li><p>Dashboard</p></li> */}
                     <Link to='/shop' style={{textDecoration:'none'}}><li><p>Shop</p></li></Link>
-                    <Link to='/cart' style={{textDecoration:'none'}}><li><p>Cart</p></li></Link>
-                    <Link to='/order' style={{textDecoration:'none'}}><li><p>Orders</p></li></Link>
+                    <Link to='/carts' style={{textDecoration:'none'}}><li><p>Carts</p></li></Link>
+                    <Link to='/orders' style={{textDecoration:'none'}}><li><p>Orders</p></li></Link>
                     <li><p onClick={signOut}>Sign out</p></li>
                     </> :
                     <>
@@ -44,8 +44,8 @@ const NavBar = () => {
                 {localStorage.getItem('token') ? <> 
                 {/* <li><p>Dashboard</p></li> */}
                 <Link to='/shop' style={{textDecoration:'none'}}><li><p>Shop</p></li></Link>
-                <Link to='/cart' style={{textDecoration:'none'}}><li><p>Cart</p></li></Link>
-                <Link to='/order' style={{textDecoration:'none'}}><li><p>Orders</p></li></Link>
+                <Link to='/carts' style={{textDecoration:'none'}}><li><p>Carts</p></li></Link>
+                <Link to='/orders' style={{textDecoration:'none'}}><li><p>Orders</p></li></Link>
                     <li><p onClick={signOut}>Sign out</p></li>
                     </> :
                     <>

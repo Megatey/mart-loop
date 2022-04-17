@@ -3,6 +3,7 @@ import './shop.css'
 import { useSelector, useDispatch } from 'react-redux'
 import { setProducts } from '../../redux'
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 
 
@@ -10,6 +11,7 @@ import { Link } from 'react-router-dom'
 const Shop = () => {
   const products = useSelector(state => state.useTheReducer.allProducts)
   const dispatch = useDispatch()
+  const navigate = useNavigate()
   const [commodities, setCommodities] = useState()
   const [items, setItems] = useState()
 
@@ -37,6 +39,10 @@ const Shop = () => {
   useEffect(() => {
 
     const fetch = getProducts()
+
+    if(!localStorage.getItem('token')) {
+        navigate('/')
+    }
 
     return () => {
       fetch()
