@@ -73,7 +73,7 @@
 .product-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
 }
 
 .product-name {
@@ -152,6 +152,10 @@
         display: flex;
         justify-content: space-between;
         row-gap: 10px;
+    }
+
+    .product-image{
+        object-fit: fill;
     }
 
 

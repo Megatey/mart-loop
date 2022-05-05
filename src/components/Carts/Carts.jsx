@@ -8,7 +8,7 @@ const Carts = () => {
         console.log('starting.....');
         try {
             console.log('fetching carts');
-            const getCarts = await fetch(`${process.env.REACT_APP_BASEURL}/allcart`, {
+            const getCarts = await fetch(`${process.env.REACT_APP_BASEURL}/carts/find/${localStorage.getItem('id')}`, {
                 headers: {
                     'Authorization': 'Bearer ' + localStorage.getItem('token')
 

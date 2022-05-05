@@ -82,7 +82,7 @@ const homeDisplay = () => {
   const newitems =  commodities?.map((product) => (
     <div key={product._id} className="product-container">
       <div className="product-image-container">
-        <img src="/images/product_image.png" alt="product pix" className='product-image' />
+        <img src={product.img} alt="product pix" className='product-image' />
       </div>
       <h3 className="product-name">{product.title}</h3>
       <h3 className="product-price">$ {product.price}</h3>
@@ -102,7 +102,7 @@ const genderBasedItems = (gender) => {
   const newarrDisplay = genderItems?.map((product) => (
     <div key={product._id} className="product-container">
       <div className="product-image-container">
-        <img src="/images/product_image.png" alt="product pix" className='product-image' />
+        <img src={product.img} alt="product pix" className='product-image' />
       </div>
       <h3 className="product-name">{product.title}</h3>
       <h3 className="product-price">$ {product.price}</h3>

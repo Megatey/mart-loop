@@ -8,7 +8,7 @@ const ProductDetails = () => {
     const { productId } = useParams()
     const dispatch = useDispatch()
     const productInfo = useSelector(state => state.useTheReducer.productDetails)
-    const { _id, title, desc, price, categories, inStock } = productInfo
+    const { _id, title, desc, price, categories, inStock, img } = productInfo
 
 
     // get single product details function
@@ -142,7 +142,7 @@ const ProductDetails = () => {
         <div>
             <div key={_id} className="detail-container">
                 <div className="product-image-container">
-                    <img src="/images/product_image.png" alt="product" className="pix-container" />
+                    <img src={img} alt="product" className="pix-container" />
                 </div>
                 <div className="product-info-container">
                     <h3 className='product-title'>{title}</h3>
