@@ -1,1 +1,1 @@
-export {setUserDatas, setProducts, setProductDetails} from './action'
+export {setUserDatas, setProducts, setProductDetails, setCartsProducts, setOrdersProducts} from './action'

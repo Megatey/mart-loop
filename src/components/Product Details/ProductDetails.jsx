@@ -75,10 +75,8 @@ const ProductDetails = () => {
                 },
                 body: JSON.stringify({
                     userId: localStorage.getItem('id'),
-                    products:[{
-                        productId: _id,
-                        quantity: amount
-                    }]
+                    productId: _id,
+                    quantity: amount
                 })
             })
             const resCart = await postCart.json()
@@ -113,11 +111,9 @@ const ProductDetails = () => {
                 },
                 body: JSON.stringify({
                     userId: localStorage.getItem('id'),
-                    products:[{
                         productId: _id,
-                        quantity: amount
-                    }],
-                    amount: price,
+                        quantity: amount,
+                        amount: price,
                     address: supplyAddress
                 })
             })

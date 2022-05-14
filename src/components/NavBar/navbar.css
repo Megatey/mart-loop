@@ -60,8 +60,12 @@
 
 .menu-list ul li {
     cursor: pointer;
-    padding: 0 5px;
+    margin-bottom: 10px;
     text-align: center;
+}
+
+.menu-list ul li p{
+    color: #000;
 }
 
 .menu-list ul li p:hover {
@@ -102,7 +106,7 @@
     }
 
     .menu-list-desktop ul li {
-        padding: 0 5px;
+        padding: 10px;
         cursor: pointer;
         border: 2px solid #161616;
         border-radius: 5px;
