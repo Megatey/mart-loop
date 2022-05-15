@@ -1,5 +1,5 @@
 import './carts.css';
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { setCartsProducts } from '../../redux';
 import Cart from './Cart' 
@@ -8,6 +8,12 @@ const Carts = () => {
   const dispatch = useDispatch()
   const carts = useSelector(state => state.useTheReducer.cartsProducts)
   console.log(carts);
+
+  const [showAlert, setShowAlert] = useState(false)
+  const [successAlert, setSuccessAlert] = useState(false)
+  const [msg, setMsg] = useState('Alert .................')
+  const [errorDisplay, setErrorDisplay] = useState(false)
+
 
     //get all cart function
     const getAllCarts = async () => {
@@ -28,6 +34,10 @@ const Carts = () => {
             
         } catch (error) {
             console.log('network error', error);
+            setShowAlert(true)
+                setSuccessAlert(false)
+                setMsg('Unable to fetch datas. REFRESH PAGE.')
+                setErrorDisplay(true)
         }
     }
 
@@ -44,9 +54,14 @@ const Carts = () => {
       <div className="carts-head">
         <h1 className="carts-title">Carts</h1>
       </div>
-      <div className="carts-listing-container">
+      {carts && <div className="carts-listing-container">
         {carts.map((cart) => <Cart key={cart.productId} cart={cart}/>)}
-      </div>
+      </div>}
+      {!carts.length && <div className='loader-container'> {!errorDisplay && <img src="/images/loading-buffering.gif" alt="loader" className='loader' />} </div>}
+      {showAlert && <div className={successAlert ? "success-alert-message" : "error-alert-message"}>
+                    <span className="closebtn" onClick={() => setShowAlert(false)}>&times;</span>
+                    {msg}
+                </div>}
     </div>
   )
 }
