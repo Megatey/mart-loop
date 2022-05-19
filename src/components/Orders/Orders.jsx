@@ -13,6 +13,7 @@ const Orders = () => {
   const [successAlert, setSuccessAlert] = useState(false)
   const [msg, setMsg] = useState('Alert .................')
   const [errorDisplay, setErrorDisplay] = useState(false)
+  const [loading, setLoading] = useState(false)
 
 
     //get all orders function
@@ -28,11 +29,13 @@ const Orders = () => {
             const res = await getOrders.json()
             console.log('fetched orders', res);
             if(res.status.code === 100) {
+      setLoading(false)
               dispatch(setOrdersProducts(res.data))
             }
             
         } catch (error) {
             console.log('network error', error);
+      setLoading(false)
             setShowAlert(true)
                 setSuccessAlert(false)
                 setMsg('Unable to fetch datas. REFRESH PAGE.')
@@ -41,6 +44,7 @@ const Orders = () => {
     }
 
     useEffect(() => {
+      setLoading(true)
         const unsubscribe = getAllOrders()
       
         return () => {
@@ -52,10 +56,10 @@ const Orders = () => {
         <div className="orders-head">
             <h1 className="orders-title">Orders</h1>
         </div>
-        {orders && <div className="orders-listing-container">
+        {!loading && orders.length ? <div className="orders-listing-container">
         {orders.map((order) => <Order key={order.productId} order={order}/>)}
-      </div>}
-      {!orders.length && <div className='loader-container'> {!errorDisplay && <img src="/images/loading-buffering.gif" alt="loader" className='loader' />} </div>}
+      </div> : !loading && !orders.length ? <div style={{textAlign: 'center'}}><h2>Order List Empty</h2></div> : null}
+      {!loading && !showAlert ?<div className='loader-container'> <img src="/images/loading-buffering.gif" alt="loader" className='loader' /> </div> : null}
       {showAlert && <div className={successAlert ? "success-alert-message" : "error-alert-message"}>
                     <span className="closebtn" onClick={() => setShowAlert(false)}>&times;</span>
                     {msg}
