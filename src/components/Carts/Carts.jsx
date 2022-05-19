@@ -58,9 +58,9 @@ const Carts = () => {
       <div className="carts-head">
         <h1 className="carts-title">Carts</h1>
       </div>
-      {!loading && carts ? <div className="carts-listing-container">
+      {!loading && carts.length ? <div className="carts-listing-container">
         {carts.map((cart) => <Cart key={cart.productId} cart={cart}/>)}
-      </div> : !loading && !carts ? <div style={{textAlign: 'center'}}><h2>Order List Empty</h2></div> : null}
+      </div> : !loading && !carts.length ? <div style={{textAlign: 'center'}}><h2>Order List Empty</h2></div> : null}
       {loading && !showAlert ? <div className='loader-container'> <img src="/images/loading-buffering.gif" alt="loader" className='loader' /> </div> : null}
       {showAlert && <div className={successAlert ? "success-alert-message" : "error-alert-message"}>
                     <span className="closebtn" onClick={() => setShowAlert(false)}>&times;</span>
