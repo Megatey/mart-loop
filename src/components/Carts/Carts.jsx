@@ -13,6 +13,7 @@ const Carts = () => {
   const [successAlert, setSuccessAlert] = useState(false)
   const [msg, setMsg] = useState('Alert .................')
   const [errorDisplay, setErrorDisplay] = useState(false)
+  const [loading, setLoading] = useState(false)
 
 
     //get all cart function
@@ -29,12 +30,14 @@ const Carts = () => {
             const res = await getCarts.json()
             console.log('fetched carts', res);
             if(res.status.code === 100) {
+              setLoading(false)
               dispatch(setCartsProducts(res.data))
             }
             
         } catch (error) {
             console.log('network error', error);
             setShowAlert(true)
+              setLoading(false)
                 setSuccessAlert(false)
                 setMsg('Unable to fetch datas. REFRESH PAGE.')
                 setErrorDisplay(true)
@@ -42,6 +45,7 @@ const Carts = () => {
     }
 
     useEffect(() => {
+      setLoading(true)
       const unsubscribe = getAllCarts()
     
       return () => {
@@ -54,10 +58,10 @@ const Carts = () => {
       <div className="carts-head">
         <h1 className="carts-title">Carts</h1>
       </div>
-      {carts && <div className="carts-listing-container">
+      {!loading && carts ? <div className="carts-listing-container">
         {carts.map((cart) => <Cart key={cart.productId} cart={cart}/>)}
-      </div>}
-      {!carts.length && <div className='loader-container'> {!errorDisplay && <img src="/images/loading-buffering.gif" alt="loader" className='loader' />} </div>}
+      </div> : <div style={{textAlign: 'center'}}><h2>Order List Empty</h2></div>}
+      {loading && !showAlert ? <div className='loader-container'> <img src="/images/loading-buffering.gif" alt="loader" className='loader' /> </div> : null}
       {showAlert && <div className={successAlert ? "success-alert-message" : "error-alert-message"}>
                     <span className="closebtn" onClick={() => setShowAlert(false)}>&times;</span>
                     {msg}
